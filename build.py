@@ -243,17 +243,26 @@ def build():
         f'<a class="era" href="{{R}}era/{e[0]}.html">{thumb(e[5])}<div class="t"><span class="n">{sum(1 for x in T if era_of(x["date"]) == e)} のできごと</span><b>{e[1]}</b><small>{e[2]}</small></div></a>'
         for e in ERAS)
     year_cards = "".join(f'<a href="{{R}}year/{y}.html">{y}<small>{sum(1 for x in T if x["date"][:4] == y)} 件</small></a>' for y in YEARS)
-    ys = [y for y in YEARS if y >= "2016"]
-    mx = max(sum(1 for x in T if x["date"][:4] == y) for y in ys)
-    bars = ""
-    for i, y in enumerate(ys, 1):
-        tot = sum(1 for x in T if x["date"][:4] == y)
-        mvn = sum(1 for x in T if x["date"][:4] == y and x["cat"] == "mv")
-        bars += (f'<a class="br" href="{{R}}year/{y}.html"><span class="by">{y}</span><span class="bt"><i class="b1" style="--w:{tot / mx * 100:.1f}%;--d:{i * 0.07:.2f}s"></i>'
-                 f'<i class="b2" style="--w:{mvn / mx * 100:.1f}%;--d:{i * 0.07 + 0.25:.2f}s"></i></span><span class="bn">{tot}<small>（MV {mvn}）</small></span></a>')
-    activity = (f'<section><h2 class="sec-t">お絵かきのあしあと</h2><p class="lead" style="margin-bottom:10px">これまでのできごと {len(T)} 件、そのうち MV イラスト {n_mv} 本。'
-                f'年ごとにどれだけ描いてきたかを並べました（濃いピンクが MV）。</p><div class="bars" id="bars">{bars}</div></section>'
-                '<script>(function(){var b=document.getElementById("bars");if(!b)return;function go(){b.classList.add("on")}'
+    ys = [str(y) for y in range(2016, int(max(YEARS)) + 1)]
+    tot_of = {y: sum(1 for x in T if x["date"][:4] == y) for y in ys}
+    mv_of = {y: sum(1 for x in T if x["date"][:4] == y and x["cat"] == "mv") for y in ys}
+    mx = max(tot_of.values())
+    top_y = max(ys, key=lambda y: (tot_of[y], y))
+    cols, rows = "", ""
+    for i, y in enumerate(ys):
+        t, m = tot_of[y], mv_of[y]
+        tip = f"{y}年: {t} 件（MV {m}・そのほか {t - m}）"
+        star = '<em class="pk">★いちばん</em>' if y == top_y else ""
+        cols += (f'<a class="pc{" ptop" if y == top_y else ""}" href="{{R}}year/{y}.html" data-tip="{tip}" aria-label="{tip}" style="--d:{i * 0.08:.2f}s">'
+                 f'<span class="pb" style="--h:{t / mx * 100:.1f}%"><b class="pn">{t}</b>{star}'
+                 f'<i class="po" style="flex:{t - m}"></i><i class="pm" style="flex:{m}"></i></span><span class="py">{y[2:]}</span></a>')
+        rows += f"<tr><td>{y}年</td><td>{m}</td><td>{t - m}</td><td>{t}</td></tr>"
+    activity = (f'<section><h2 class="sec-t">お絵かきのあしあと</h2><p class="lead" style="margin-bottom:12px">これまでのできごと {len(T)} 件、そのうち MV イラスト {n_mv} 本。'
+                f'{top_y}年がいちばんにぎやかな年でした。棒を押すと、その年のページが開きます。</p>'
+                '<div class="paw-lg"><span><i class="pm"></i>MV イラスト</span><span><i class="po"></i>展覧会・コラボ・本など</span></div>'
+                f'<div class="paw" id="paw" role="img" aria-label="2016年から{ys[-1]}年までの年ごとのできごと数">{cols}</div>'
+                f'<details class="paw-t"><summary>数字で見る</summary><table><tr><th>年</th><th>MV</th><th>そのほか</th><th>合計</th></tr>{rows}</table></details></section>'
+                '<script>(function(){var b=document.getElementById("paw");if(!b)return;function go(){b.classList.add("on")}'
                 'if(!("IntersectionObserver" in window)||matchMedia("(prefers-reduced-motion: reduce)").matches){go();return}'
                 'var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go();o.disconnect()}})},{threshold:.25});o.observe(b)})()</script>')
     recent = [e for e in T if e["date"] <= TODAY][-6:][::-1]

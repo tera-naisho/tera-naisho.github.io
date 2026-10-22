@@ -151,6 +151,31 @@ h1{font-weight:900}h1,.sec-t{letter-spacing:.01em}
 .up .d{background:var(--lemon);border:2px solid var(--edge)}
 footer{background:#0d0614;border-top:6px solid transparent;border-image:repeating-linear-gradient(90deg,var(--ac2) 0 24px,var(--yl) 24px 48px,var(--lemon) 48px 72px) 6;color:#e2d4f2}
 footer a{color:var(--lemon)}
+/* お絵かきのあしあと: 暗い紫のボードに、ステッカー風の縦棒（MV＝ピンクの水玉、そのほか＝水色のストライプ） */
+.paw-lg{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.paw-lg span{display:flex;align-items:center;gap:6px}.paw-lg i{width:18px;height:14px;border-radius:4px;border:2px solid var(--edge)}
+.pm{background-color:#ff3d8b;background-image:radial-gradient(rgba(255,255,255,.85) 1.6px,transparent 2px);background-size:8px 8px}
+.po{background-color:#4cc9f0;background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.55) 0 2px,transparent 2px 7px)}
+.paw{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));grid-auto-flow:column;gap:8px;height:260px;padding:44px 14px 10px;border-radius:16px;border:3px solid var(--edge);
+background-color:#1e0f2e;background-image:radial-gradient(rgba(255,255,255,.08) 1.5px,transparent 2px),linear-gradient(transparent calc(100% - 1px),rgba(255,255,255,.08) 0);background-size:16px 16px,100% 25%}
+.pc{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;text-decoration:none;min-width:0;height:100%}
+.pb{position:relative;display:flex;flex-direction:column;gap:2px;width:min(100%,42px);height:0;transition:height .9s cubic-bezier(.34,1.56,.64,1) var(--d)}
+.paw.on .pb{height:calc(var(--h) - 22px)}
+.pb i{display:block;min-height:0;border:2px solid #fff;border-radius:3px}.pb i:first-of-type{border-radius:9px 9px 3px 3px}
+.pb i[style="flex:0"]{display:none}
+.pn{position:absolute;bottom:100%;left:50%;transform:translate(-50%,-6px);background:var(--lemon);color:var(--ink);border:2px solid var(--edge);border-radius:99px;font-size:12px;font-weight:900;line-height:1;padding:4px 7px;white-space:nowrap;opacity:0;transition:opacity .3s calc(var(--d) + .6s)}
+.paw.on .pn{opacity:1}
+.pk{position:absolute;bottom:100%;left:50%;transform:translate(-50%,-32px) rotate(-6deg);font-style:normal;font-size:11px;font-weight:900;color:#fff;background:#ff3d8b;border:2px solid #fff;border-radius:6px;padding:1px 5px;white-space:nowrap;opacity:0;transition:opacity .3s calc(var(--d) + .8s)}
+.paw.on .pk{opacity:1}
+.py{margin-top:6px;font-size:12px;font-weight:800;color:#f3e6ff;line-height:1}.pc.ptop .py{color:var(--lemon)}
+.pc:hover .pb,.pc:focus-visible .pb{transform:translateY(-4px) rotate(-2deg);filter:drop-shadow(4px 4px 0 #0d0614)}
+.pc::after{content:attr(data-tip);position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);background:#0d0614;color:#fff;border:2px solid var(--lemon);border-radius:10px;padding:5px 9px;font-size:12px;font-weight:700;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .15s;z-index:3}
+.pc:hover::after,.pc:focus-visible::after{opacity:1}
+.pc:first-child::after{left:0;transform:none}.pc:last-child::after{left:auto;right:0;transform:none}
+.paw-t{margin-top:10px;font-size:13.5px}.paw-t summary{cursor:pointer;font-weight:700;color:var(--ac)}
+.paw-t table{border-collapse:collapse;margin-top:6px}.paw-t td,.paw-t th{border:1px solid var(--line);padding:3px 10px;text-align:right}.paw-t td:first-child,.paw-t th:first-child{text-align:left}
+@media(max-width:560px){.paw{gap:4px;padding:40px 8px 8px}.pn{font-size:10.5px;padding:3px 5px}.pb i{border-width:1.5px}}
+@media (prefers-reduced-motion:reduce){.pb,.pn,.pk{transition:none}}
 </style></head><body>
 <header class="top"><div class="in"><a class="logo" href="index.html">寺田てら <span>ないしょの</span>お寺</a><span class="badge">非公式ファンサイト</span></div></header>
 <nav class="gnav"><ul><li><a href="index.html">お寺の入口</a></li><li><a href="timeline.html">全部の年表</a></li><li><a href="mv.html" class=on>MV ギャラリー</a></li><li><a href="works.html">MV・ジャケット</a></li><li><a href="exhibit.html">展覧会・ポップアップ</a></li><li><a href="collab.html">コラボ・グッズ</a></li><li><a href="books.html">本・漫画</a></li><li><a href="schedule.html">これからの予定</a></li><li><a href="about.html">このお寺について</a></li></ul></nav>
