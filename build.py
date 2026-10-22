@@ -8,7 +8,7 @@
 - data/mv.json … 曲 → 公式 YouTube の動画。概要欄に「寺田てら」のクレジットがあるものだけ（tools/yt_credit.py で確認）。
 - これからの予定 … ~/knowledge-os/oshi-events.js の artist が 寺田てら の行を docs/upcoming.js に書き出す。
 - 画像 … 寺田てらさんのイラストの画像ファイルは置かない（複製・転載をしない）。MV は YouTube のサムネイルを i.ytimg.com から直接表示し、公式動画にリンクする。
-  置いてよい画像ファイルは AI でつくったオリジナルのヘッダー（assets/header.jpg・2026-10-23 Gemini 作。夜のお寺とちょうちん、人物・キャラクターなし。文字はあとから PIL で入れた。上書きしない）。
+  置いてよい画像ファイルは AI でつくったオリジナルのヘッダー（assets/header.jpg・2026-10-23 Gemini 作。原宿ポップなお寺とステッカーのコラージュ、人物・キャラクターなし。題名の白いラベルは PIL で入れた。上書きしない）。
 非公式のファンサイト。アフィリエイト・広告は入れない。
 """
 import html, json, os, re, shutil
