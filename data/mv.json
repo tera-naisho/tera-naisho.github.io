@@ -256,6 +256,17 @@
   "credit": "Illustration: 寺田てら",
   "note": ""
  },
+ "新時代（レコード大賞メドレー）": {
+  "id": "yQI-7GIKN7I",
+  "title": "【Ado】 レコード大賞2022スペシャルメドレー（新時代〜逆光〜私は最強）",
+  "ch": "Ado",
+  "yt_date": "2022-12-30",
+  "artist": "Ado",
+  "song": "レコード大賞2022スペシャルメドレー",
+  "credit": "「新時代」は寺田てら",
+  "note": "3 曲を 3 人のイラストレーターが描き分けた特別映像。",
+  "tl_title": "Ado「レコード大賞2022スペシャルメドレー」で「新時代」パートのイラストを担当"
+ },
  "カミサマ・ネコサマ": {
   "id": "gA6Qf7iu8SE",
   "title": "【MV】カミサマ・ネコサマ / 猫又おかゆ(official)",
@@ -264,7 +275,9 @@
   "artist": "猫又おかゆ",
   "song": "カミサマ・ネコサマ",
   "credit": "Illust：寺田てら",
-  "note": "ホロライブの猫又おかゆさんのオリジナル曲。"
+  "note": "ホロライブの猫又おかゆさんのオリジナル曲。",
+  "x": "https://x.com/trcoot/status/1628372030591741952",
+  "role": "キャラクターイラスト"
  },
  "忘れないでベイベー": {
   "id": "hybGv3SucxM",
@@ -284,7 +297,31 @@
   "artist": "ピノキオピー",
   "song": "甘噛みでおねがい feat. 初音ミク",
   "credit": "Illustration / 寺田てら",
-  "note": ""
+  "note": "",
+  "x": "https://x.com/trcoot/status/1656969099824758785"
+ },
+ "Trigger": {
+  "id": "TyJ_q_FOkIc",
+  "title": "Trigger/七海うらら (Official Music Video)",
+  "ch": "七海うらら*歌channel",
+  "yt_date": "2023-06-22",
+  "artist": "七海うらら",
+  "song": "Trigger",
+  "credit": "Illust 寺田てら",
+  "note": "七海うららさんの 2nd シングル。",
+  "x": "https://x.com/trcoot/status/1671903105905233920"
+ },
+ "可愛くてごめん（まふまふ 歌ってみた）": {
+  "id": "3OwUhg-l9gQ",
+  "title": "可愛くてごめん／まふまふ【歌ってみた】",
+  "ch": "まふまふちゃんねる",
+  "yt_date": "2023-06-24",
+  "artist": "まふまふ",
+  "song": "可愛くてごめん",
+  "credit": "寺田てら",
+  "note": "",
+  "tl_title": "まふまふ「可愛くてごめん」歌ってみた MV に、イラストの一部で参加",
+  "x": "https://x.com/trcoot/status/1672532912351371264"
  },
  "Useless Angel": {
   "id": "omevssFXOoY",
@@ -314,7 +351,9 @@
   "artist": "ナナヲアカリ",
   "song": "メルティックヘル feat. 超学生",
   "credit": "Illustration: 寺田てら",
-  "note": ""
+  "note": "",
+  "x": "https://x.com/trcoot/status/1738175151743930788",
+  "role": "キャラクターデザインとイラスト"
  },
  "極楽地獄": {
   "id": "m1G_TMtnXF0",
@@ -324,7 +363,19 @@
   "artist": "After the Rain（そらる×まふまふ）",
   "song": "極楽地獄",
   "credit": "絵 寺田てら",
-  "note": ""
+  "note": "",
+  "x": "https://x.com/trcoot/status/1802270617959575579"
+ },
+ "モードク": {
+  "id": "G0dn1WU4kSs",
+  "title": "沙花叉クロヱ MV - モードク",
+  "ch": "Chloe ch. 沙花叉クロヱ - holoX -",
+  "yt_date": "2024-11-29",
+  "artist": "沙花叉クロヱ",
+  "song": "モードク",
+  "credit": "寺田てら",
+  "note": "ホロライブ（holoX）の沙花叉クロヱさんの曲。",
+  "x": "https://x.com/trcoot/status/1865398555491573870"
  },
  "ムリムリ進化論": {
   "id": "o4OsvOqHnZM",
@@ -334,7 +385,9 @@
   "artist": "ナナヲアカリ",
   "song": "ムリムリ進化論",
   "credit": "寺田てら",
-  "note": ""
+  "note": "",
+  "x": "https://x.com/trcoot/status/1944982712307028276",
+  "tl_title": "ナナヲアカリ「ムリムリ進化論」MV に、イラストレーターのひとりとして参加"
  },
  "ギミギミ聖域": {
   "id": "9vxf2J4GNSc",
@@ -357,5 +410,17 @@
   "note": "",
   "role": "イラストと映像監督",
   "big": true
+ },
+ "NaN GAME": {
+  "id": "W3Gl0bSvwTU",
+  "title": "NaN GAME / 博衣こより【フロクロ・Aiobahn +81】(Official)",
+  "ch": "Koyori ch. 博衣こより - holoX -",
+  "yt_date": "2026-05-06",
+  "artist": "博衣こより",
+  "song": "NaN GAME",
+  "credit": "寺田てら / Terada Tera",
+  "note": "制作は HASH,inc.。",
+  "tl_title": "博衣こより「NaN GAME」MV で、一部のイラストとアニメーションを担当",
+  "x": "https://x.com/trcoot/status/2052003176451342360"
  }
 }

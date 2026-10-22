@@ -91,8 +91,14 @@ def mv_card(k):
 
 
 def x_embed(url):
-    return (f'<div class="xpost"><blockquote class="twitter-tweet" data-lang="ja" data-dnt="true">'
-            f'<a href="{url}">公式 X のポストを見る</a></blockquote></div>')
+    """公式 X のポストは、ボタンを押したときだけ埋め込みを読み込む（ページを軽く保つ）"""
+    who = "寺田てらさん本人" if "/trcoot/" in url else "寺田てら公式スタッフ"
+    return f'<div class="xl"><button class="xbtn" data-x="{url}">{who}の X ポストを見る</button><div class="xwrap"></div></div>'
+
+
+X_SCRIPT = """<script>document.addEventListener('click',function(ev){var b=ev.target.closest('.xbtn');if(!b||b.dataset.done)return;b.dataset.done=1;b.textContent='表示しました';
+var w=b.parentNode.querySelector('.xwrap'),d=document.createElement('div');d.className='xpost';d.innerHTML='<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true"><a href="'+b.dataset.x+'"></a></blockquote>';w.appendChild(d);
+function go(){window.twttr&&twttr.widgets?twttr.widgets.load(d):setTimeout(go,300)}if(!window.__tw){window.__tw=1;var s=document.createElement('script');s.src='https://platform.twitter.com/widgets.js';s.async=true;document.body.appendChild(s)}go()});</script>"""
 
 
 def item(e):
@@ -135,7 +141,7 @@ def timeline(events, by_year=True):
 
 NAV = [("index.html", "お寺の入口"), ("timeline.html", "全部の年表"), ("mv.html", "MV ギャラリー"), ("works.html", "MV・ジャケット"),
        ("exhibit.html", "展覧会・ポップアップ"), ("collab.html", "コラボ・グッズ"), ("books.html", "本・漫画"),
-       ("schedule.html", "これからの予定"), ("about.html", "このお寺について")]
+       ("x.html", "公式Xまとめ"), ("schedule.html", "これからの予定"), ("about.html", "このお寺について")]
 
 
 def sidebar():
@@ -144,6 +150,7 @@ def sidebar():
     return f"""<aside class="side">
 <div class="box"><h2>🔔 このお寺について</h2><p class="note">イラストレーター・寺田てらさんの歩みを、あなたと一緒にこっそりたどれる<b>非公式</b>の年表サイトです。ファンがつくり、毎月のできごとごとに書き足していきます。ご本人・公式とは関係ありません。</p></div>
 <div class="box"><h2>🎬 MV ギャラリー</h2><p class="note">寺田てらさんの絵が動く MV を、公式動画でまとめて見られます。</p><ul><li><a href="{{R}}mv.html">MV ギャラリー（{len(MV)} 本）</a></li></ul></div>
+<div class="box"><h2>🐦 公式Xまとめ</h2><p class="note">お仕事の告知を、寺田てらさん本人の言葉でたどれます。</p><ul><li><a href="{{R}}x.html">公式Xまとめ（{sum(1 for e in T if e.get("x"))} 件）</a></li></ul></div>
 <div class="box"><h2>🗺 時代でたどる</h2><ul>{eras}</ul></div>
 <div class="box sticky"><h2>📅 年でたどる</h2><ul>{years}</ul>
 <h2 style="margin-top:14px">📣 公式はこちら</h2><ul>
@@ -165,7 +172,7 @@ def page(path, title, desc, body, crumb=None, hero=False):
     full = NAME if path == "index.html" else f"{title}｜{NAME}"
     heroh = f'<div class="hero">{hero}</div>' if hero else ""
     og = SITE + "img/header.jpg" if HEADER else thumb_url(MV["阿修羅ちゃん"]["id"])
-    widgets = '<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>' if "twitter-tweet" in body else ""
+    widgets = X_SCRIPT if "xbtn" in body else ""
     doc = f"""<!doctype html><html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(full)}</title><meta name="description" content="{esc(desc)}">
@@ -174,7 +181,7 @@ def page(path, title, desc, body, crumb=None, hero=False):
 <meta property="og:type" content="website"><meta property="og:url" content="{SITE}{path}">
 <meta property="og:image" content="{og}"><meta name="twitter:card" content="summary_large_image">
 {ga_tag()}
-<style>{CSS}</style></head><body>
+<style>{CSS}</style></head><body class="{"home" if path == "index.html" else "sub"}">
 <header class="top"><div class="in"><a class="logo" href="{R}index.html">寺田てら <span>ないしょの</span>お寺</a><span class="badge">非公式ファンサイト</span></div></header>
 <nav class="gnav"><ul>{nav}</ul></nav>
 {heroh}
@@ -328,6 +335,15 @@ def build():
          f'<section><h1>MV ギャラリー</h1><p class="lead">寺田てらさんの絵が動き出す MV を、まとめて楽しめます。どれも、アーティストの公式チャンネルの概要欄に「寺田てら」とクレジットされている動画だけです。サムネイルを押すと YouTube で開きます。アーティストごとに、公開された順に並べました。あなたのお気に入りの MV は、どれですか？</p>'
          f'<div class="stats"><div><b>{n_mv}</b>MV</div><div><b>{len(artists)}</b>組</div><div><b>{min(m["yt_date"] for m in MV.values())[:4]}〜{max(m["yt_date"] for m in MV.values())[:4]}</b>年</div></div></section>' + sec,
          crumb=["MV ギャラリー"])
+
+    # 公式 X まとめ
+    xs = [e for e in T if e.get("x")][::-1]
+    xc = "".join(f'<div class="xc"><span class="chip" style="--c:{CATS[e["cat"]][1]}">{CATS[e["cat"]][0]}</span><h3>{fmt(e["date"])}｜{esc(e["title"])}</h3>{x_embed(e["x"])}</div>' for e in xs)
+    n_self = sum(1 for e in xs if "/trcoot/" in e["x"])
+    page("x.html", "公式Xまとめ", f"寺田てらさん本人（@trcoot）と公式スタッフ（@teradateras）の X から、お仕事・展覧会・コラボの告知 {len(xs)} 件をまとめました。",
+         f'<section><h1>公式Xまとめ</h1><p class="lead">お仕事の告知を、寺田てらさん本人の言葉でもう一度たどれます。本人の X（<a href="https://x.com/trcoot" target="_blank" rel="noopener">@trcoot</a>）と公式スタッフの X（<a href="https://x.com/teradateras" target="_blank" rel="noopener">@teradateras</a>）から、MV・グッズ・展覧会・コラボの告知を新しい順に並べました。ボタンを押すと、そのポストが X の埋め込みで表示されます。あなたがいちばんうれしかった告知は、どれですか？</p>'
+         f'<div class="stats"><div><b>{len(xs)}</b>ポスト</div><div><b>{n_self}</b>本人</div><div><b>{len(xs) - n_self}</b>公式スタッフ</div></div></section>'
+         f'<section><div class="xgrid">{xc}</div></section>', crumb=["公式Xまとめ"])
 
     page("schedule.html", "これからの予定", "寺田てらさんのこれからの展覧会・ポップアップ・グッズ発売などの予定。毎週更新。",
          '<section><h1>これからの予定</h1><p class="lead">次に寺田てらさんの絵に会える日が、ひと目でわかります。展覧会・ポップアップ・グッズ発売の予定をまとめています。</p></section>'

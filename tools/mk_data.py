@@ -15,7 +15,7 @@ for k, m in mv.items():
         continue
     role = m.get("role", "イラスト")
     T.append({"date": m["yt_date"], "cat": "mv", "title": m.get("tl_title") or f'{m["artist"]}「{m["song"]}」MV の{role}を担当',
-              "note": m.get("note", ""), "big": bool(m.get("big")), "videos": [k]})
+              "note": m.get("note", ""), "big": bool(m.get("big")), "videos": [k], **({"x": m["x"]} if m.get("x") else {})})
 T.sort(key=lambda e: e["date"])
 json.dump(T, open(D("timeline.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=0)
 print(f"timeline {len(T)} events（MV {sum(1 for e in T if e['cat'] == 'mv')}）")
