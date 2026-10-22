@@ -258,9 +258,9 @@ def build():
                 'var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){go();o.disconnect()}})},{threshold:.25});o.observe(b)})()</script>')
     recent = [e for e in T if e["date"] <= TODAY][-6:][::-1]
     body = f"""<section><h1>ようこそ、ないしょのお寺へ。</h1>
-<p class="lead">イラストレーター・寺田てらさんの歩みを、あなたの「好き」と一緒にこっそりたどれます。漫画『メダ子さんの恋スル侵略計画』、ナナヲアカリさんの「ダダダダ天使」「チューリングラブ」、まふまふさんの「デジャヴ」、Ado さんの「阿修羅ちゃん」、そして作品集『Chroma』や松屋銀座の個展「SensiouS」まで。ビビッドでポップ、それでいてちょっぴりダークな絵で、たくさんの歌と街を彩ってきた寺田てらさんと、一緒に作品をつくってきた作り手の皆さんへの拍手を込めて、ファンがまとめた非公式のお寺です。毎月、新しいできごとを書き足していきます。</p>
+<p class="lead">お参りに来てくださって、ありがとうございます。イラストレーター・寺田てらさんの歩みを、あなたの「好き」と一緒にこっそりたどれます。漫画『メダ子さんの恋スル侵略計画』、ナナヲアカリさんの「ダダダダ天使」「チューリングラブ」、まふまふさんの「デジャヴ」、Ado さんの「阿修羅ちゃん」、そして作品集『Chroma』や松屋銀座の個展「SensiouS」まで。ビビッドでポップ、それでいてちょっぴりダークな絵で、たくさんの歌と街を彩ってきた寺田てらさんと、一緒に作品をつくってきた作り手の皆さんへの拍手を込めて、ファンがまとめた非公式のお寺です。毎月、新しいできごとを書き足していきます。</p>
 <div class="stats"><div><b>{n_mv}</b>MV イラスト</div><div><b>{len(artists)}</b>組のアーティスト</div><div><b>{n_ex}</b>展覧会・ポップアップ</div><div><b>{n_co}</b>コラボ</div></div>
-<p class="lead" style="margin-top:12px">あなたが寺田てらさんの絵に出会ったのは、どの一枚ですか？　お参りに来てくださって、ありがとうございます。</p></section>
+<p class="lead" style="margin-top:12px">あなたが寺田てらさんの絵に出会ったのは、どの一枚ですか？</p></section>
 {upcoming_box(5)}
 {activity}
 <section><h2 class="sec-t">時代でたどる寺田てらさんの歩み</h2><div class="eras">{era_cards}</div></section>
