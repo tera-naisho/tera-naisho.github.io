@@ -90,10 +90,20 @@ def mv_card(k):
             f'<small class="cr">概要欄のクレジット: {esc(m["credit"])}</small></span></a></div>')
 
 
-def x_embed(url):
-    """公式 X のポストは、ボタンを押したときだけ埋め込みを読み込む（ページを軽く保つ）"""
-    who = "寺田てらさん本人" if "/trcoot/" in url else "寺田てら公式スタッフ"
-    return f'<div class="xl"><button class="xbtn" data-x="{url}">{who}の X ポストを見る</button><div class="xwrap"></div></div>'
+def artist_links(ax):
+    """MV のアーティストの公式 X アカウント（MV の概要欄に書かれていたもの）"""
+    return "".join(f'<a class="xa" href="https://x.com/{h}" target="_blank" rel="noopener">{esc(n)}さんの X（@{h}）</a>' for n, h in (ax or []))
+
+
+def x_embed(url, ax=None):
+    """公式 X のポストは、ボタンを押したときだけ埋め込みを読み込む（ページを軽く保つ）。MV はアーティストの X アカウントを横に並べる"""
+    btn = ""
+    if url:
+        who = "寺田てらさん本人" if "/trcoot/" in url else "寺田てら公式スタッフ"
+        btn = f'<button class="xbtn" data-x="{url}">{who}の X ポストを見る</button>'
+    if not btn and not ax:
+        return ""
+    return f'<div class="xl">{btn}{artist_links(ax)}<div class="xwrap"></div></div>'
 
 
 X_SCRIPT = """<script>document.addEventListener('click',function(ev){var b=ev.target.closest('.xbtn');if(!b||b.dataset.done)return;b.dataset.done=1;b.textContent='表示しました';
@@ -105,8 +115,7 @@ def item(e):
     name, color = CATS.get(e["cat"], ("その他", "#64748b"))
     note = f'<p>{esc(e["note"])}</p>' if e.get("note") else ""
     note += "".join(mv_card(k) for k in e.get("videos", []) if k in MV)
-    if e.get("x"):
-        note += x_embed(e["x"])
+    note += x_embed(e.get("x"), e.get("artist_x"))
     return (f'<li class="ev{" big" if e.get("big") else ""}"><div class="dt">{fmt(e["date"])}</div>'
             f'<div class="bd"><span class="chip" style="--c:{color}">{name}</span>'
             f'<h3>{esc(e["title"])}</h3>{note}</div></li>')
@@ -226,7 +235,8 @@ def write_upcoming():
 def gcard(m):
     return (f'<div><a href="{watch(m["id"])}" target="_blank" rel="noopener"><img src="{thumb_url(m["id"])}" alt="" loading="lazy">{esc(m["title"])}</a>'
             f'<small style="display:block;font-weight:400;color:var(--sub)">{esc(m["ch"])}</small>'
-            f'<small style="color:var(--sub);font-size:12px">{fmt(m["yt_date"])}</small></div>')
+            f'<small style="color:var(--sub);font-size:12px">{fmt(m["yt_date"])}</small>'
+            + (f'<div class="xl">{artist_links(m.get("artist_x"))}</div>' if m.get("artist_x") else "") + '</div>')
 
 
 def build():
@@ -338,7 +348,7 @@ def build():
 
     # 公式 X まとめ
     xs = [e for e in T if e.get("x")][::-1]
-    xc = "".join(f'<div class="xc"><span class="chip" style="--c:{CATS[e["cat"]][1]}">{CATS[e["cat"]][0]}</span><h3>{fmt(e["date"])}｜{esc(e["title"])}</h3>{x_embed(e["x"])}</div>' for e in xs)
+    xc = "".join(f'<div class="xc"><span class="chip" style="--c:{CATS[e["cat"]][1]}">{CATS[e["cat"]][0]}</span><h3>{fmt(e["date"])}｜{esc(e["title"])}</h3>{x_embed(e["x"], e.get("artist_x"))}</div>' for e in xs)
     n_self = sum(1 for e in xs if "/trcoot/" in e["x"])
     page("x.html", "公式Xまとめ", f"寺田てらさん本人（@trcoot）と公式スタッフ（@teradateras）の X から、お仕事・展覧会・コラボの告知 {len(xs)} 件をまとめました。",
          f'<section><h1>公式Xまとめ</h1><p class="lead">お仕事の告知を、寺田てらさん本人の言葉でもう一度たどれます。本人の X（<a href="https://x.com/trcoot" target="_blank" rel="noopener">@trcoot</a>）と公式スタッフの X（<a href="https://x.com/teradateras" target="_blank" rel="noopener">@teradateras</a>）から、MV・グッズ・展覧会・コラボの告知を新しい順に並べました。ボタンを押すと、そのポストが X の埋め込みで表示されます。あなたがいちばんうれしかった告知は、どれですか？</p>'

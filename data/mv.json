@@ -7,7 +7,13 @@
   "artist": "ナナヲアカリ",
   "song": "ディスコミュ星人",
   "credit": "Illustration:寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "ビビっちゃいない": {
   "id": "Kp9zsavjWjk",
@@ -17,7 +23,13 @@
   "artist": "ナナヲアカリ",
   "song": "ビビっちゃいない",
   "credit": "Illustration:寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "ハッピーになりたい": {
   "id": "oqLOBhaizy8",
@@ -27,7 +39,13 @@
   "artist": "ナナヲアカリ",
   "song": "ハッピーになりたい",
   "credit": "Illustration:寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "ダダダダ天使": {
   "id": "ANp0qch3XVM",
@@ -38,7 +56,13 @@
   "song": "ダダダダ天使",
   "credit": "Illustration:寺田てら",
   "note": "作詞作曲はナユタン星人さん。たくさんのカバーやネットミームを生んだ一曲。",
-  "big": true
+  "big": true,
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "メルヘル小惑星": {
   "id": "MGikRKh68gA",
@@ -48,7 +72,13 @@
   "artist": "ナナヲアカリ",
   "song": "メルヘル小惑星",
   "credit": "Illustration:寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "メリーバッドエンド feat. 初音ミク": {
   "id": "kffrKgAN7tI",
@@ -58,7 +88,13 @@
   "artist": "まふまふ",
   "song": "メリーバッドエンド feat. 初音ミク",
   "credit": "絵 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ]
+  ]
  },
  "インスタントヘヴン feat.Eve": {
   "id": "IrrF_bUE8yc",
@@ -68,7 +104,13 @@
   "artist": "ナナヲアカリ",
   "song": "インスタントヘヴン feat.Eve",
   "credit": "Illustration:寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "ハローディストピア": {
   "id": "ye2J__KE9Yg",
@@ -79,7 +121,13 @@
   "song": "ハローディストピア feat. 鏡音リン・レン",
   "credit": "絵 寺田てら",
   "note": "",
-  "big": true
+  "big": true,
+  "artist_x": [
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ]
+  ]
  },
  "ワンルームシュガーライフ": {
   "id": "rnSsptZaYsM",
@@ -89,7 +137,13 @@
   "artist": "ナナヲアカリ",
   "song": "ワンルームシュガーライフ",
   "credit": "Illustration:寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "ジグソーパズル": {
   "id": "ta9zslmSRqg",
@@ -99,7 +153,13 @@
   "artist": "まふまふ",
   "song": "ジグソーパズル feat. 鏡音レン",
   "credit": "絵 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ]
+  ]
  },
  "GHOST": {
   "id": "kcTX1FBP6lg",
@@ -109,7 +169,17 @@
   "artist": "まふまふ×nqrse",
   "song": "GHOST",
   "credit": "Illust Terada Tera",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ],
+   [
+    "nqrse",
+    "nqrse"
+   ]
+  ]
  },
  "シアワセシンドローム": {
   "id": "zEPOTM48Q48",
@@ -119,7 +189,13 @@
   "artist": "ナナヲアカリ",
   "song": "シアワセシンドローム",
   "credit": "Illustration:寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "デジャヴ": {
   "id": "zNvRAhQkTR0",
@@ -130,7 +206,13 @@
   "song": "デジャヴ",
   "credit": "絵 寺田てら",
   "note": "",
-  "big": true
+  "big": true,
+  "artist_x": [
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ]
+  ]
  },
  "MAD TIME LOVE": {
   "id": "6MVXIuV2mdM",
@@ -140,7 +222,13 @@
   "artist": "ピンキーポップヘップバーン",
   "song": "MAD TIME LOVE",
   "credit": "Illustrator: 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ピンキーポップヘップバーン",
+    "PinkyPopHepburn"
+   ]
+  ]
  },
  "チューリングラブ feat.Sou": {
   "id": "L-MVk5I6wjo",
@@ -151,7 +239,13 @@
   "song": "チューリングラブ feat.Sou",
   "credit": "Illustration : 寺田てら",
   "note": "のちにアニメ『理系が恋に落ちたので証明してみた。』のエンディングにも。",
-  "big": true
+  "big": true,
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "メリーバッドエンド": {
   "id": "jGd3qYQQOZY",
@@ -161,7 +255,13 @@
   "artist": "まふまふ",
   "song": "メリーバッドエンド",
   "credit": "絵 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ]
+  ]
  },
  "完全放棄宣言": {
   "id": "Vi_asBY5UX8",
@@ -171,7 +271,13 @@
   "artist": "ナナヲアカリ",
   "song": "完全放棄宣言",
   "credit": "Illustration : 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "イカサマダンス": {
   "id": "p2x6rhF2-K4",
@@ -181,7 +287,13 @@
   "artist": "まふまふ",
   "song": "イカサマダンス feat. 鏡音リン・レン",
   "credit": "絵 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ]
+  ]
  },
  "魔法": {
   "id": "eqr98KBmsJk",
@@ -191,7 +303,13 @@
   "artist": "ナナヲアカリ",
   "song": "魔法",
   "credit": "Illustration : 寺田てら",
-  "note": "マンガ『山田くんとLv999の恋をする』とのコラボレーションソング。"
+  "note": "マンガ『山田くんとLv999の恋をする』とのコラボレーションソング。",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "ねぇねぇねぇ。": {
   "id": "w8yweCungCE",
@@ -201,7 +319,13 @@
   "artist": "ピノキオピー",
   "song": "ねぇねぇねぇ。 feat. 鏡音リン・初音ミク",
   "credit": "Illustration / 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ピノキオピー",
+    "pinocchiop"
+   ]
+  ]
  },
  "阿修羅ちゃん": {
   "id": "cyq5-StPISU",
@@ -213,7 +337,13 @@
   "credit": "Illust：寺田てら様",
   "note": "作詞作曲は Neru さん、映像は MONO-Devoid さん。テレビ朝日系『ドクターX』第 7 シリーズの主題歌。",
   "role": "イラスト・ジャケット",
-  "big": true
+  "big": true,
+  "artist_x": [
+   [
+    "Ado",
+    "ado1024imokenp"
+   ]
+  ]
  },
  "アイがあるようでないようである": {
   "id": "oxKa7J9CRNM",
@@ -223,7 +353,13 @@
   "artist": "ナナヲアカリ",
   "song": "アイがあるようでないようである",
   "credit": "Illustration : 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "ダンスロボットダンス MV アレンジメドレー": {
   "id": "Vb-z6AR-2F0",
@@ -234,7 +370,13 @@
   "song": "ダンスロボットダンス MV アレンジメドレー",
   "credit": "🎨寺田てら",
   "note": "",
-  "tl_title": "ナユタン星人「ダンスロボットダンス」の MV アレンジメドレーに、25 人の絵師のひとりとして参加"
+  "tl_title": "ナユタン星人「ダンスロボットダンス」の MV アレンジメドレーに、25 人の絵師のひとりとして参加",
+  "artist_x": [
+   [
+    "ナユタン星人",
+    "NayutalieN"
+   ]
+  ]
  },
  "恋愛脳": {
   "id": "IEEJA1ZeQaI",
@@ -244,7 +386,13 @@
   "artist": "ナナヲアカリ",
   "song": "恋愛脳",
   "credit": "Illustration: 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "恋愛脳 -Aiobahn +81 Remix-": {
   "id": "FelOmMuZxAk",
@@ -254,7 +402,13 @@
   "artist": "ナナヲアカリ",
   "song": "恋愛脳 -Aiobahn +81 Remix-",
   "credit": "Illustration: 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "新時代（レコード大賞メドレー）": {
   "id": "yQI-7GIKN7I",
@@ -265,7 +419,13 @@
   "song": "レコード大賞2022スペシャルメドレー",
   "credit": "「新時代」は寺田てら",
   "note": "3 曲を 3 人のイラストレーターが描き分けた特別映像。",
-  "tl_title": "Ado「レコード大賞2022スペシャルメドレー」で「新時代」パートのイラストを担当"
+  "tl_title": "Ado「レコード大賞2022スペシャルメドレー」で「新時代」パートのイラストを担当",
+  "artist_x": [
+   [
+    "Ado",
+    "ado1024imokenp"
+   ]
+  ]
  },
  "カミサマ・ネコサマ": {
   "id": "gA6Qf7iu8SE",
@@ -277,7 +437,13 @@
   "credit": "Illust：寺田てら",
   "note": "ホロライブの猫又おかゆさんのオリジナル曲。",
   "x": "https://x.com/trcoot/status/1628372030591741952",
-  "role": "キャラクターイラスト"
+  "role": "キャラクターイラスト",
+  "artist_x": [
+   [
+    "猫又おかゆ",
+    "nekomataokayu"
+   ]
+  ]
  },
  "忘れないでベイベー": {
   "id": "hybGv3SucxM",
@@ -287,7 +453,13 @@
   "artist": "ナナヲアカリ",
   "song": "忘れないでベイベー",
   "credit": "Illustration: 寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "甘噛みでおねがい": {
   "id": "diVoF2nnHTk",
@@ -298,7 +470,13 @@
   "song": "甘噛みでおねがい feat. 初音ミク",
   "credit": "Illustration / 寺田てら",
   "note": "",
-  "x": "https://x.com/trcoot/status/1656969099824758785"
+  "x": "https://x.com/trcoot/status/1656969099824758785",
+  "artist_x": [
+   [
+    "ピノキオピー",
+    "pinocchiop"
+   ]
+  ]
  },
  "Trigger": {
   "id": "TyJ_q_FOkIc",
@@ -309,7 +487,13 @@
   "song": "Trigger",
   "credit": "Illust 寺田てら",
   "note": "七海うららさんの 2nd シングル。",
-  "x": "https://x.com/trcoot/status/1671903105905233920"
+  "x": "https://x.com/trcoot/status/1671903105905233920",
+  "artist_x": [
+   [
+    "七海うらら",
+    "773urara"
+   ]
+  ]
  },
  "可愛くてごめん（まふまふ 歌ってみた）": {
   "id": "3OwUhg-l9gQ",
@@ -321,7 +505,13 @@
   "credit": "寺田てら",
   "note": "",
   "tl_title": "まふまふ「可愛くてごめん」歌ってみた MV に、イラストの一部で参加",
-  "x": "https://x.com/trcoot/status/1672532912351371264"
+  "x": "https://x.com/trcoot/status/1672532912351371264",
+  "artist_x": [
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ]
+  ]
  },
  "Useless Angel": {
   "id": "omevssFXOoY",
@@ -331,7 +521,13 @@
   "artist": "ナナヲアカリ",
   "song": "Useless Angel（ダダダダ天使 English ver.）",
   "credit": "Illustration: Terada Tera",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "クロスワードパズル": {
   "id": "a9ZCQH6a3tw",
@@ -341,7 +537,13 @@
   "artist": "まふまふ",
   "song": "クロスワードパズル",
   "credit": "絵 ：寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ]
+  ]
  },
  "メルティックヘル feat. 超学生": {
   "id": "QkfmeJvqtuo",
@@ -353,7 +555,13 @@
   "credit": "Illustration: 寺田てら",
   "note": "",
   "x": "https://x.com/trcoot/status/1738175151743930788",
-  "role": "キャラクターデザインとイラスト"
+  "role": "キャラクターデザインとイラスト",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "極楽地獄": {
   "id": "m1G_TMtnXF0",
@@ -364,7 +572,17 @@
   "song": "極楽地獄",
   "credit": "絵 寺田てら",
   "note": "",
-  "x": "https://x.com/trcoot/status/1802270617959575579"
+  "x": "https://x.com/trcoot/status/1802270617959575579",
+  "artist_x": [
+   [
+    "そらる",
+    "soraruru"
+   ],
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ]
+  ]
  },
  "ねぇねぇねぇ。（そらる×まふまふ cover）": {
   "id": "Suo4owjn4W8",
@@ -375,7 +593,17 @@
   "song": "ねぇねぇねぇ。",
   "credit": "寺田てら",
   "note": "ピノキオピーさんの曲のカバー。原曲の MV も寺田てらさんが描いている。",
-  "tl_title": "そらる×まふまふ「ねぇねぇねぇ。」カバー動画のイラストを担当"
+  "tl_title": "そらる×まふまふ「ねぇねぇねぇ。」カバー動画のイラストを担当",
+  "artist_x": [
+   [
+    "そらる",
+    "soraruru"
+   ],
+   [
+    "まふまふ",
+    "uni_mafumafu"
+   ]
+  ]
  },
  "モードク": {
   "id": "G0dn1WU4kSs",
@@ -386,7 +614,13 @@
   "song": "モードク",
   "credit": "寺田てら",
   "note": "ホロライブ（holoX）の沙花叉クロヱさんの曲。",
-  "x": "https://x.com/trcoot/status/1865398555491573870"
+  "x": "https://x.com/trcoot/status/1865398555491573870",
+  "artist_x": [
+   [
+    "沙花叉クロヱ",
+    "sakamatachloe"
+   ]
+  ]
  },
  "ムリムリ進化論": {
   "id": "o4OsvOqHnZM",
@@ -398,7 +632,13 @@
   "credit": "寺田てら",
   "note": "",
   "x": "https://x.com/trcoot/status/1944982712307028276",
-  "tl_title": "ナナヲアカリ「ムリムリ進化論」MV に、イラストレーターのひとりとして参加"
+  "tl_title": "ナナヲアカリ「ムリムリ進化論」MV に、イラストレーターのひとりとして参加",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "ギミギミ聖域": {
   "id": "9vxf2J4GNSc",
@@ -408,7 +648,13 @@
   "artist": "ナナヲアカリ",
   "song": "ギミギミ聖域",
   "credit": "Illustration：寺田てら",
-  "note": ""
+  "note": "",
+  "artist_x": [
+   [
+    "ナナヲアカリ",
+    "nanawoakari"
+   ]
+  ]
  },
  "不死身ごっこ": {
   "id": "hCc0iI8jdQU",
@@ -420,7 +666,13 @@
   "credit": "Illustration & Movie Direction: 寺田てら",
   "note": "",
   "role": "イラストと映像監督",
-  "big": true
+  "big": true,
+  "artist_x": [
+   [
+    "ピノキオピー",
+    "pinocchiop"
+   ]
+  ]
  },
  "NaN GAME": {
   "id": "W3Gl0bSvwTU",
@@ -432,6 +684,12 @@
   "credit": "寺田てら / Terada Tera",
   "note": "制作は HASH,inc.。",
   "tl_title": "博衣こより「NaN GAME」MV で、一部のイラストとアニメーションを担当",
-  "x": "https://x.com/trcoot/status/2052003176451342360"
+  "x": "https://x.com/trcoot/status/2052003176451342360",
+  "artist_x": [
+   [
+    "博衣こより",
+    "hakuikoyori"
+   ]
+  ]
  }
 }
