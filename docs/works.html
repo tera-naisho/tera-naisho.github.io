@@ -119,6 +119,38 @@ footer{background:var(--hd);color:#c8cde0;font-size:13px;text-align:center;paddi
 
 .tera{font-size:13px;color:var(--sub);margin:8px 0 0}.cred{font-size:12px;color:var(--sub);display:block;font-weight:400}
 .mv .mt small.cr{color:var(--ac2)}
+/* ===== 原宿ポップ × ちょっぴりダーク（2026-10-23）: 明暗どちらの設定でも同じ見た目 ===== */
+:root,:root:not([data-theme="light"]){--bg:#fbf2ff;--card:#fff;--ink:#1e1030;--sub:#5e4a6e;--line:#ead6f2;--ac:#d40f6f;--ac2:#ff3d8b;--yl:#4cc9f0;--hd:#12081c;--lemon:#ffe24a;--mint:#5ef2c2;--edge:#1e1030}
+@media (prefers-color-scheme:dark){:root{--bg:#fbf2ff;--card:#fff;--ink:#1e1030;--sub:#5e4a6e;--line:#ead6f2;--ac:#d40f6f;--ac2:#ff3d8b;--hd:#12081c}}
+body{background-color:#170b24;background-image:radial-gradient(rgba(255,61,139,.22) 2px,transparent 2.5px),radial-gradient(rgba(76,201,240,.18) 2px,transparent 2.5px);background-size:28px 28px;background-position:0 0,14px 14px}
+.top{background:#0d0614;border-bottom:4px solid var(--ac2);box-shadow:0 4px 0 var(--yl)}
+.logo{font-size:22px;text-shadow:0 0 10px rgba(255,61,139,.6)}.logo span{color:var(--ac2)}
+.badge{border-color:var(--lemon);color:var(--lemon)}
+.gnav{background:#1e0f2e;border-bottom:0;box-shadow:0 3px 0 #0d0614}
+.gnav a{color:#f3e6ff}.gnav a.on,.gnav a:hover{color:var(--lemon);border-color:var(--lemon);text-shadow:0 0 8px rgba(255,226,74,.6)}
+.hero .hdr{border:4px solid var(--edge);box-shadow:8px 8px 0 var(--ac2)}
+.mosaic{border:4px solid var(--edge);box-shadow:8px 8px 0 var(--yl)}
+main>section,.box{border:3px solid var(--edge);border-radius:18px;box-shadow:7px 7px 0 var(--ac2)}
+.side .box{box-shadow:6px 6px 0 var(--yl)}.side .box:nth-child(3n+2){box-shadow:6px 6px 0 var(--lemon)}.side .box:nth-child(3n){box-shadow:6px 6px 0 var(--mint)}
+main>section:nth-of-type(3n+2){box-shadow:7px 7px 0 var(--yl)}main>section:nth-of-type(3n){box-shadow:7px 7px 0 var(--lemon)}
+.crumb{color:#e9d8f7;background:#1e0f2e;display:inline-block;padding:2px 12px;border-radius:99px}.crumb a{color:var(--lemon)}
+h1{font-weight:900}h1,.sec-t{letter-spacing:.01em}
+.sec-t:before{width:22px;height:22px;border-radius:50%;background:conic-gradient(var(--ac2) 0 33%,var(--yl) 0 66%,var(--lemon) 0);border:3px solid var(--edge)}
+.chip{color:var(--ink);background:color-mix(in srgb,var(--c) 22%,#fff);border:2px solid var(--edge);font-weight:800}
+.tl{border-left:4px dashed var(--ac2)}
+.ev:before{border:3px solid var(--edge);background:var(--yl)}
+.ev.big:before{background:var(--lemon);border-color:var(--edge);box-shadow:0 0 0 3px var(--ac2)}
+.ev.big h3{color:var(--ac);background:linear-gradient(transparent 62%,rgba(255,226,74,.7) 0);display:inline}
+.era,.years a,.mv,.cv .c,.mg .c,.stats div{border:2px solid var(--edge)}
+.era:hover{box-shadow:5px 5px 0 var(--ac2)}.years a:hover{background:var(--lemon);border-color:var(--edge)}
+.stats div{background:#fff;box-shadow:4px 4px 0 var(--yl)}.stats b{color:var(--ac2)}
+.mv:hover{border-color:var(--ac2);box-shadow:4px 4px 0 var(--ac2)}
+.mvgrid img{border:2px solid var(--edge)}
+.notice{border-left-color:var(--ac2);background:#fff4fa}
+.pager a{border:2px solid var(--edge);box-shadow:3px 3px 0 var(--yl);color:var(--ink);font-weight:700}
+.up .d{background:var(--lemon);border:2px solid var(--edge)}
+footer{background:#0d0614;border-top:6px solid transparent;border-image:repeating-linear-gradient(90deg,var(--ac2) 0 24px,var(--yl) 24px 48px,var(--lemon) 48px 72px) 6;color:#e2d4f2}
+footer a{color:var(--lemon)}
 </style></head><body>
 <header class="top"><div class="in"><a class="logo" href="index.html">寺田てら <span>ないしょの</span>お寺</a><span class="badge">非公式ファンサイト</span></div></header>
 <nav class="gnav"><ul><li><a href="index.html">お寺の入口</a></li><li><a href="timeline.html">全部の年表</a></li><li><a href="mv.html">MV ギャラリー</a></li><li><a href="works.html" class=on>MV・ジャケット</a></li><li><a href="exhibit.html">展覧会・ポップアップ</a></li><li><a href="collab.html">コラボ・グッズ</a></li><li><a href="books.html">本・漫画</a></li><li><a href="schedule.html">これからの予定</a></li><li><a href="about.html">このお寺について</a></li></ul></nav>
