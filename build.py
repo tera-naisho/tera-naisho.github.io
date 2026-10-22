@@ -149,11 +149,7 @@ def sidebar():
 <h2 style="margin-top:14px">📣 公式はこちら</h2><ul>
 <li><a href="https://www.teradaterasworld.com/" rel="noopener" target="_blank">公式サイト T-R.I.P teradatera works</a></li>
 <li><a href="https://www.teradaterasworld.com/news.html" rel="noopener" target="_blank">公式サイトのニュース</a></li>
-<li><a href="https://x.com/trcoot" rel="noopener" target="_blank">寺田てらさんの X（@trcoot）</a></li></ul>
-<h2 style="margin-top:14px">🏠 姉妹サイト</h2><ul>
-<li><a href="https://ado-himitsukichi.github.io/" rel="noopener" target="_blank">Ado 非公式ワクワク秘密基地</a></li>
-<li><a href="https://yama-kossori.github.io/" rel="noopener" target="_blank">yamaファンのこっそり部屋</a></li>
-<li><a href="https://clanqueen-teikoku.github.io/" rel="noopener" target="_blank">CLAN QUEEN 秘密の帝国</a></li></ul></div>
+<li><a href="https://x.com/trcoot" rel="noopener" target="_blank">寺田てらさんの X（@trcoot）</a></li></ul></div>
 </aside>"""
 
 
