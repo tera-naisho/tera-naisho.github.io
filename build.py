@@ -332,7 +332,7 @@ def build():
     order = sorted(by, key=lambda a: (-len(by[a]), by[a][0]["yt_date"]))
     sec = "".join(f'<section><h2 class="sec-t">{esc(a)}（{len(by[a])}）</h2><div class="mvgrid">{"".join(gcard(m) for m in by[a])}</div></section>' for a in order)
     page("mv.html", "MV ギャラリー", f"寺田てらさんがイラストを描いた MV {n_mv} 本を、アーティストの公式 YouTube へのリンクでまとめました。",
-         f'<section><h1>MV ギャラリー</h1><p class="lead">寺田てらさんの絵が動き出す MV を、まとめて楽しめます。どれも、アーティストの公式チャンネルの概要欄に「寺田てら」とクレジットされている動画だけです。サムネイルを押すと YouTube で開きます。アーティストごとに、公開された順に並べました。あなたのお気に入りの MV は、どれですか？</p>'
+         f'<section><h1>MV ギャラリー</h1><p class="lead">寺田てらさんの絵が動き出す MV を、まとめて楽しめます。どれも、アーティストの公式チャンネルの概要欄か、寺田てらさん本人の X で、寺田てらさんの絵だと確かめられた動画だけです。サムネイルを押すと YouTube で開きます。アーティストごとに、公開された順に並べました。あなたのお気に入りの MV は、どれですか？</p>'
          f'<div class="stats"><div><b>{n_mv}</b>MV</div><div><b>{len(artists)}</b>組</div><div><b>{min(m["yt_date"] for m in MV.values())[:4]}〜{max(m["yt_date"] for m in MV.values())[:4]}</b>年</div></div></section>' + sec,
          crumb=["MV ギャラリー"])
 
@@ -353,7 +353,7 @@ def build():
 <p>「寺田てら ないしょのお寺」は、イラストレーター・寺田てらさんの歩みを、ファンのあなたが好きなときにたどれるようにつくった<b>非公式</b>のファンサイトです。寺田てらさんご本人、所属先、関係する企業・団体とは一切関係ありません。</p>
 <h2>このお寺でやっていること</h2><ul>
 <li>生まれた年から今までのできごとを、年表にまとめています。MV は 1 本ずつ、公開日に年表へのせています</li>
-<li>MV は、アーティストの公式 YouTube の概要欄に「寺田てら」とクレジットがあるものだけをのせています</li>
+<li>MV は、アーティストの公式 YouTube の概要欄、または寺田てらさん本人の X（@trcoot）で、寺田てらさんの絵だと確かめられたものだけをのせています</li>
 <li>毎月、前の月のできごとを書き足します。これからの予定は毎週更新します</li>
 <li>情報は公式サイト・公式 YouTube・報道・プレスリリース・Wikipedia などの公開情報をもとにしています。まちがいに気づいたときは直します</li></ul>
 <h2>やらないこと</h2><ul>
@@ -368,6 +368,7 @@ def build():
 <h2>参考にしている情報源</h2><ul>
 <li><a href="https://www.teradaterasworld.com/" target="_blank" rel="noopener">寺田てら 公式サイト</a>（News・Biography）</li>
 <li>各アーティストの公式 YouTube チャンネル（MV の概要欄のクレジット）</li>
+<li><a href="https://x.com/trcoot" target="_blank" rel="noopener">寺田てらさん本人の X（@trcoot）</a>・<a href="https://x.com/teradateras" target="_blank" rel="noopener">公式スタッフの X（@teradateras）</a></li>
 <li><a href="https://ja.wikipedia.org/wiki/%E5%AF%BA%E7%94%B0%E3%81%A6%E3%82%89" target="_blank" rel="noopener">寺田てら - Wikipedia</a></li>
 <li>KAI-YOU、SPICE、ぴあ、PR TIMES、各会場・各社の告知ページ</li></ul></section>""", crumb=["このお寺について"])
 
