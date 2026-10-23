@@ -194,3 +194,8 @@ body.sub main>section:first-of-type .notice{background:#0d0614;color:#e6d6f5}
 .xa{display:inline-block;font-size:12px;font-weight:800;padding:3px 11px;border-radius:99px;background:#fff;color:var(--ink);border:2px solid var(--edge);box-shadow:2px 2px 0 var(--ac2);text-decoration:none;white-space:nowrap}
 .xa::before{content:"𝕏 ";font-weight:900}.xa:hover{background:var(--lemon)}
 .mvgrid .xl{margin-top:6px}.mvgrid .xa{font-size:11px;padding:2px 8px;white-space:normal}
+.prof{display:flex;gap:14px;align-items:flex-start;background:var(--bg);border:2px solid var(--edge);border-radius:14px;padding:14px;box-shadow:4px 4px 0 var(--yl)}
+.prof p{margin:0 0 8px}.prof p:last-child{margin:0}
+.prof .av{flex:0 0 56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;font-weight:900;color:#fff;background:#1e0f2e;border:3px solid var(--edge);box-shadow:0 0 0 3px var(--ac2);text-shadow:0 0 8px rgba(255,61,139,.9)}
+.prof.sm{padding:0;border:0;box-shadow:none;background:none;gap:10px}.prof.sm .av{flex-basis:40px;height:40px;font-size:18px}
+.prof{color:var(--ink)}
