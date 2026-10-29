@@ -14,5 +14,5 @@
   - CD グッズのクレジットだけの動画（MV の絵ではない）は入れない
 - `python3 tools/mk_data.py` … core.json と mv.json から `data/timeline.json` を作る（MV は公開日に年表へ）
 - `python3 build.py` … docs/ を生成（これからの予定は ~/knowledge-os/oshi-events.js の 寺田てら 分）
-- 画像ファイルは Gemini でつくったオリジナルのヘッダー（assets/header.jpg。人物・キャラクター・寺田てらさんの絵柄なし。文字は PIL で後から入れた）だけ。上書きしない。寺田てらさんのイラストの複製・転載はしない。MV は YouTube サムネイルを直接表示して公式動画にリンク
+- 画像ファイルは置かない（AI 画像も置かない・2026-10-29 本人指示。トップのヘッダーは文字だけ）。寺田てらさんのイラストの複製・転載はしない。MV は YouTube サムネイルを直接表示して公式動画にリンク
 - 広告・アフィリエイトなし。Google アナリティクスはほかのサイトと共通の測定 ID（ホスト名 tera-naisho.github.io で絞る）

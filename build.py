@@ -8,7 +8,7 @@
 - data/mv.json … 曲 → 公式 YouTube の動画。概要欄に「寺田てら」のクレジットがあるものだけ（tools/yt_credit.py で確認）。
 - これからの予定 … ~/knowledge-os/oshi-events.js の artist が 寺田てら の行を docs/upcoming.js に書き出す。
 - 画像 … 寺田てらさんのイラストの画像ファイルは置かない（複製・転載をしない）。MV は YouTube のサムネイルを i.ytimg.com から直接表示し、公式動画にリンクする。
-  置いてよい画像ファイルは AI でつくったオリジナルのヘッダー（assets/header.jpg・2026-10-23 Gemini 作。原宿ポップ×ちょっぴりダーク（暗い紫にネオンのお寺とステッカー）、人物・キャラクターなし。題名は縁取り＋光彩で PIL で入れた（ラベルなし）。上書きしない）。
+  画像ファイルは置かない。AI 画像も置かない（2026-10-29 本人指示。トップのヘッダーは文字だけ）。
 非公式のファンサイト。アフィリエイト・広告は入れない。
 """
 import html, json, os, re, shutil
@@ -21,7 +21,6 @@ SITE = "https://tera-naisho.github.io/"
 GA = "G-EHWF25C1RB"  # ほかのサイトと共通の測定 ID（GA4 でホスト名 tera-naisho.github.io で絞る）
 EVENTS_JS = os.path.expanduser("~/knowledge-os/oshi-events.js")
 TODAY = date.today().isoformat()
-HEADER = os.path.exists(os.path.join(ROOT, "assets", "header.jpg"))
 
 CATS = {
     "mv": ("MV イラスト", "#ff3d8b"),
@@ -181,7 +180,7 @@ def page(path, title, desc, body, crumb=None, hero=False):
     cr = '<div class="crumb"><a href="' + R + 'index.html">お寺の入口</a> › ' + " › ".join(crumb) + "</div>" if crumb else ""
     full = NAME if path == "index.html" else f"{title}｜{NAME}"
     heroh = f'<div class="hero">{hero}</div>' if hero else ""
-    og = SITE + "img/header.jpg" if HEADER else thumb_url(MV["阿修羅ちゃん"]["id"])
+    og = thumb_url(MV["阿修羅ちゃん"]["id"])  # 公式 MV のサムネイル（YouTube）。AI 画像は置かない
     widgets = X_SCRIPT if "xbtn" in body else ""
     doc = f"""<!doctype html><html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -198,7 +197,7 @@ def page(path, title, desc, body, crumb=None, hero=False):
 <div class="layout"><main>{cr}{body}</main>{sidebar()}</div>
 <footer>{NAME} は、寺田てらさんを応援するファンによる<b>非公式</b>のファンサイトです。寺田てらさんご本人・関係する企業や団体とは関係ありません。<br>
 掲載情報は公開されている報道・公式発表をもとにしています。最新・正確な情報は<a href="https://www.teradaterasworld.com/" target="_blank" rel="noopener">公式サイト</a>でご確認ください。<br>
-寺田てらさんのイラストの複製・転載はしていません（トップのヘッダーは AI でつくったオリジナルのイラストです）。動画のサムネイルは YouTube から直接表示し、公式動画にリンクしています（権利は各権利者に帰属します）。 ／ <a href="{R}about.html">このお寺について・プライバシー</a><br>最終更新: {TODAY}</footer>
+寺田てらさんのイラストの複製・転載はしていません。動画のサムネイルは YouTube から直接表示し、公式動画にリンクしています（権利は各権利者に帰属します）。 ／ <a href="{R}about.html">このお寺について・プライバシー</a><br>最終更新: {TODAY}</footer>
 {widgets}</body></html>"""
     doc = doc.replace("{R}", R)
     p = os.path.join(OUT, path)
@@ -217,8 +216,24 @@ def upcoming_box(limit, title="これからの予定", more=True):
 today=t.getFullYear()+'-'+pad(t.getMonth()+1)+'-'+pad(t.getDate()),K={{live:'ライブ',release:'発売',tieup:'コラボ',event:'イベント',media:'テレビ・配信',ticket:'チケット'}},
 W='日月火水木金土',it=(window.TERA_UPCOMING||[]).filter(function(e){{return e.date>=today}}).slice(0,lim);
 if(!it.length){{el.innerHTML='<li class="empty">いま分かっている予定はありません。</li>';return}}
-el.innerHTML=it.map(function(e){{var d=new Date(e.date+'T00:00:00');return '<li><div class="d">'+(d.getMonth()+1)+'/'+d.getDate()+'<small>'+d.getFullYear()+'（'+W[d.getDay()]+'）</small></div><div><span class="k">'+(K[e.kind]||'')+'</span><div>'+e.title.replace(/[<>&]/g,'')+'</div></div></li>'}}).join('')}})();
+el.innerHTML=it.map(function(e){{var d=new Date(e.date+'T00:00:00');return '<li><div class="d">'+(e.when?e.when[0]+'<small>'+e.when[1]+'</small>':(d.getMonth()+1)+'/'+d.getDate()+'<small>'+d.getFullYear()+'（'+W[d.getDay()]+'）</small>')+'</div><div><span class="k">'+(K[e.kind]||'')+'</span><div>'+e.title.replace(/[<>&]/g,'')+'</div></div></li>'}}).join('')}})();
 </script>"""
+
+
+def vague(e):
+    """タイトルに「要確認」がある予定は、日付をぼかして when に「11月」「上旬（予定）」を入れ、タイトルから注記を外す。"""
+    t = e["title"]
+    if "要確認" not in t:
+        return e
+    m = int(e["date"][5:7])
+    pm = re.search(r"(\d+)\s*月\s*(上旬|中旬|下旬)予定", t)
+    part = pm.group(2) if pm else ("" if e["date"].endswith("-01") else ("上旬" if int(e["date"][8:]) <= 10 else "中旬" if int(e["date"][8:]) <= 20 else "下旬"))
+    if pm:
+        m = int(pm.group(1))
+    t = re.sub(r"[・／]?\s*\d+\s*月\s*(上旬|中旬|下旬)予定", "", t)
+    t = re.sub(r"[・／]?\s*(日付は)?要確認", "", t)
+    t = re.sub(r"（\s*）", "", t).replace("（・", "（").replace("・）", "）").strip()
+    return {**e, "title": t, "when": [f"{m}月", f"{part}（予定）"]}
 
 
 def write_upcoming():
@@ -229,6 +244,7 @@ def write_upcoming():
             if m.group(3) != "anniv":
                 items.append({"date": m.group(1), "title": json.loads('"' + m.group(2) + '"'), "kind": m.group(3)})
     items.sort(key=lambda e: e["date"])
+    items = [vague(e) for e in items]
     open(os.path.join(OUT, "upcoming.js"), "w", encoding="utf-8").write("window.TERA_UPCOMING=" + json.dumps(items, ensure_ascii=False) + ";\n")
     return len(items)
 
@@ -247,9 +263,6 @@ def build():
             shutil.rmtree(p) if os.path.isdir(p) else os.remove(p)
     os.makedirs(OUT, exist_ok=True)
     open(os.path.join(OUT, ".nojekyll"), "w").close()
-    if HEADER:
-        os.makedirs(os.path.join(OUT, "img"), exist_ok=True)
-        shutil.copy(os.path.join(ROOT, "assets", "header.jpg"), os.path.join(OUT, "img", "header.jpg"))
     n_up = write_upcoming()
     n_mv = len(MV)
     artists = sorted({m["artist"] for m in MV.values()})
@@ -298,7 +311,7 @@ def build():
     mosaic = '<div class="mosaic">' + "".join(
         f'<a href="{watch(MV[k]["id"])}" target="_blank" rel="noopener" title="{esc(MV[k]["title"])}"><img src="{thumb_url(MV[k]["id"])}" alt="{esc(MV[k]["title"])}"></a>'
         for k in top if k in MV) + "</div>"
-    hdr = f'<img class="hdr" src="img/header.jpg" alt="{esc(NAME)}" width="1600" height="640">' if HEADER else ""
+    hdr = f'<div class="htxt"><b>{esc(NAME)}</b><p>イラストレーター寺田てらさんの歩みを、MV と展覧会・コラボの年表でこっそりたどれる非公式ファンサイトです。毎月書き足しています。</p></div>'
     page("index.html", NAME, f"イラストレーター寺田てらさんの歩みを、MV {n_mv} 本と展覧会・コラボの年表でこっそりたどれる非公式ファンサイト。毎月更新。", body, hero=hdr + mosaic)
 
     # 全部の年表
@@ -369,8 +382,11 @@ def build():
 <li>情報は公式サイト・公式 YouTube・報道・プレスリリース・Wikipedia などの公開情報をもとにしています。まちがいに気づいたときは直します</li></ul>
 <h2>やらないこと</h2><ul>
 <li>広告・アフィリエイトは載せません</li>
-<li>寺田てらさんのイラスト・写真・ロゴの複製・転載はしません。画像は、YouTube の公式動画のサムネイル（YouTube から直接表示し、動画にリンク）と、Gemini でつくったオリジナルのヘッダーイラスト（人物やキャラクター、寺田てらさんの絵柄は描いていません）だけです。権利は各権利者に帰属します。削除のご依頼があればすぐに対応します</li>
+<li>寺田てらさんのイラスト・写真・ロゴの複製・転載はしません。画像は、YouTube の公式動画のサムネイル（YouTube から直接表示し、動画にリンク）だけです。権利は各権利者に帰属します</li>
 <li>ご本人の私生活に関することや、うわさ話は書きません</li></ul>
+<h2>AI の使い方と、お問い合わせ</h2>
+<p>年表・紹介文の下書きにAIを使い、内容は運営者が公式の発表で確かめています。画像はアーティスト・作り手への敬意から、公式の埋め込みとサムネイルだけを使い、AIで作った絵は置いていません。</p>
+<p>削除のご依頼や誤りのご指摘は、<a href="https://x.com/masabee1029" target="_blank" rel="noopener">X @masabee1029</a> の DM（ダイレクトメッセージ）でお知らせください。すぐに対応します。</p>
 <h2>お参りに来てくださって、ありがとうございます</h2>
 <p>色あざやかな絵でたくさんの歌と街を彩ってきた寺田てらさん、一緒に作品をつくってきたアーティストや作り手の皆さん、そして応援を続けるファンの皆さんに、心から感謝しています。このお寺が、あなたの「好き」をもう一度たしかめる場所になればうれしいです。</p>
 <p>あなたのいちばん好きな寺田てらさんの絵は、どれですか？</p>
