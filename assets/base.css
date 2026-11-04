@@ -199,3 +199,5 @@ body.sub main>section:first-of-type .notice{background:#0d0614;color:#e6d6f5}
 .prof .av{flex:0 0 56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;font-weight:900;color:#fff;background:#1e0f2e;border:3px solid var(--edge);box-shadow:0 0 0 3px var(--ac2);text-shadow:0 0 8px rgba(255,61,139,.9)}
 .prof.sm{padding:0;border:0;box-shadow:none;background:none;gap:10px}.prof.sm .av{flex-basis:40px;height:40px;font-size:18px}
 .prof{color:var(--ink)}
+/* 年表の丸を点線の真ん中にそろえる（線 4px の中心 = li の左端から -2px。丸 18px なので left は -11px） */
+.ev:before{box-sizing:border-box;width:18px;height:18px;left:-11px;top:9px}

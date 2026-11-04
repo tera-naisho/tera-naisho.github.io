@@ -207,6 +207,8 @@ body.sub main>section:first-of-type .notice{background:#0d0614;color:#e6d6f5}
 .prof .av{flex:0 0 56px;height:56px;border-radius:50%;display:grid;place-items:center;font-size:26px;font-weight:900;color:#fff;background:#1e0f2e;border:3px solid var(--edge);box-shadow:0 0 0 3px var(--ac2);text-shadow:0 0 8px rgba(255,61,139,.9)}
 .prof.sm{padding:0;border:0;box-shadow:none;background:none;gap:10px}.prof.sm .av{flex-basis:40px;height:40px;font-size:18px}
 .prof{color:var(--ink)}
+/* 年表の丸を点線の真ん中にそろえる（線 4px の中心 = li の左端から -2px。丸 18px なので left は -11px） */
+.ev:before{box-sizing:border-box;width:18px;height:18px;left:-11px;top:9px}
 </style></head><body class="sub">
 <header class="top"><div class="in"><a class="logo" href="index.html">寺田てら <span>ないしょの</span>お寺</a><span class="badge">非公式ファンサイト</span></div></header>
 <nav class="gnav"><ul><li><a href="index.html">お寺の入口</a></li><li><a href="timeline.html">全部の年表</a></li><li><a href="mv.html">MV ギャラリー</a></li><li><a href="works.html">MV・ジャケット</a></li><li><a href="exhibit.html" class=on>展覧会・ポップアップ</a></li><li><a href="collab.html">コラボ・グッズ</a></li><li><a href="books.html">本・漫画</a></li><li><a href="x.html">公式Xまとめ</a></li><li><a href="schedule.html">これからの予定</a></li><li><a href="about.html">このお寺について</a></li></ul></nav>
@@ -254,7 +256,7 @@ body.sub main>section:first-of-type .notice{background:#0d0614;color:#e6d6f5}
 </aside></div>
 <footer>寺田てら ないしょのお寺 は、寺田てらさんを応援するファンによる<b>非公式</b>のファンサイトです。寺田てらさんご本人・関係する企業や団体とは関係ありません。<br>
 掲載情報は公開されている報道・公式発表をもとにしています。最新・正確な情報は<a href="https://www.teradaterasworld.com/" target="_blank" rel="noopener">公式サイト</a>でご確認ください。<br>
-寺田てらさんのイラストの複製・転載はしていません。動画のサムネイルは YouTube から直接表示し、公式動画にリンクしています（権利は各権利者に帰属します）。 ／ <a href="about.html">このお寺について・プライバシー</a><br>最終更新: 2026-11-01</footer>
+寺田てらさんのイラストの複製・転載はしていません。動画のサムネイルは YouTube から直接表示し、公式動画にリンクしています（権利は各権利者に帰属します）。 ／ <a href="about.html">このお寺について・プライバシー</a><br>最終更新: 2026-11-04</footer>
 <script>document.addEventListener('click',function(ev){var b=ev.target.closest('.xbtn');if(!b||b.dataset.done)return;b.dataset.done=1;b.textContent='表示しました';
 var w=b.parentNode.querySelector('.xwrap'),d=document.createElement('div');d.className='xpost';d.innerHTML='<blockquote class="twitter-tweet" data-lang="ja" data-dnt="true"><a href="'+b.dataset.x+'"></a></blockquote>';w.appendChild(d);
 function go(){window.twttr&&twttr.widgets?twttr.widgets.load(d):setTimeout(go,300)}if(!window.__tw){window.__tw=1;var s=document.createElement('script');s.src='https://platform.twitter.com/widgets.js';s.async=true;document.body.appendChild(s)}go()});</script></body></html>
